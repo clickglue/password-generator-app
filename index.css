@@ -393,6 +393,30 @@ body {
     border-color: var(--clr-almost-white);
     border-width: 1px;
 }
+.input .strength .strength-indicator .strength-indicator-led.red{
+    background-color: var(--clr-red);
+    border-style: solid;
+    border-color: var(--clr-red);
+    border-width: 1px;
+}
+.input .strength .strength-indicator .strength-indicator-led.orange{
+    background-color: var(--clr-orange);
+    border-style: solid;
+    border-color: var(--clr-orange);
+    border-width: 1px;
+}
+.input .strength .strength-indicator .strength-indicator-led.yellow{
+    background-color: var(--clr-yellow);
+    border-style: solid;
+    border-color: var(--clr-yellow);
+    border-width: 1px;
+}
+.input .strength .strength-indicator .strength-indicator-led.green{
+    background-color: var(--clr-bright-green);
+    border-style: solid;
+    border-color: var(--clr-bright-green);
+    border-width: 1px;
+}
 
 .input .generate {
     margin-top: 1rem;

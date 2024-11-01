@@ -12,13 +12,13 @@
     <header class="header">Password Generator</header>
     <main>
       <section class="result">
-        <p><span>P4$5W0rD!</span></p>
-        <img src="./public/images/icon-copy.svg" alt="Copy icon" />
+        <p><span id="password">P4$5W0rD!</span></p>
+        <img onclick="copyToClipboard()" src="./public/images/icon-copy.svg" alt="Copy icon" />
       </section>
       <section class="input">
         <div class="length">
           <h2>Character Length</h2>
-          <p><span>10</span></p>
+          <p><span id="length">10</span></p>
         </div>
         <div class="slider">
           <input
@@ -33,28 +33,28 @@
         <div class="selection">
           <div class="checkbox-container">
             <label>
-              <input type="checkbox" />
+              <input onchange="setOptions('uppercase')" type="checkbox" checked/>
               <span class="custom-checkbox"></span>
             </label>
             <p>Include Uppercase Letters</p>
           </div>
           <div class="checkbox-container">
             <label>
-              <input type="checkbox" />
+              <input onchange="setOptions('lowercase')" type="checkbox" checked/>
               <span class="custom-checkbox"></span>
             </label>
             <p>Include Lowercase Letters</p>
           </div>
           <div class="checkbox-container">
             <label>
-              <input type="checkbox" />
+              <input onchange="setOptions('numbers')" type="checkbox" checked/>
               <span class="custom-checkbox"></span>
             </label>
             <p>Include Numbers</p>
           </div>
           <div class="checkbox-container">
             <label>
-              <input type="checkbox" />
+              <input onchange="setOptions('symbols')" type="checkbox" checked/>
               <span class="custom-checkbox"></span>
             </label>
             <p>Include Symbols</p>
@@ -62,16 +62,16 @@
         </div>
         <div class="strength">
           <p class="title">Strength</p>
-          <p class="indicator-word">Medium</p>
+          <p id="indicator-word" class="indicator-word">Medium</p>
           <div class="strength-indicator">
-            <div class="strength-indicator-led"></div>
-            <div class="strength-indicator-led"></div>
-            <div class="strength-indicator-led"></div>
-            <div class="strength-indicator-led off"></div>
+            <div id="led-one" class="strength-indicator-led"></div>
+            <div id="led-two" class="strength-indicator-led"></div>
+            <div id=led-three class="strength-indicator-led"></div>
+            <div id="led-four" class="strength-indicator-led off"></div>
           </div>
         </div>
         <div class="generate">
-          <button>
+          <button onclick="forceGenerate()">
             <h2 class="title">GENERATE</h2>
             <img src="./public/images/icon-arrow-right.svg" alt="Go!" />
           </button>
