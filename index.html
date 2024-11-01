@@ -1,29 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Frontend Mentor | Password generator app</title>
-  <link rel="stylesheet" href="./index.css">
-  <script defer src="./index.js"></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  Password Generator
-
-  P4$5W0rD!
-
-  Character Length
-
-  Include Uppercase Letters
-  Include Lowercase Letters
-  Include Numbers
-  Include Symbols
-
-  Strength
-
-  Generate
-
-</body>
+    <title>Password generator app</title>
+    <link rel="stylesheet" href="./index.css" />
+    <script defer src="./index.js"></script>
+  </head>
+  <body>
+    <header class="header">Password Generator</header>
+    <main>
+      <section class="result">
+        <p><span>P4$5W0rD!</span></p>
+        <img src="./public/images/icon-copy.svg" alt="Copy icon" />
+      </section>
+      <section class="input">
+        <div class="length">
+          <h2>Character Length</h2>
+          <p><span>10</span></p>
+        </div>
+        <div class="slider">
+          <input
+            type="range"
+            id="slider"
+            min="0"
+            max="20"
+            value="10"
+            step="1"
+          />
+        </div>
+        <div class="selection">
+          <div class="checkbox-container">
+            <input type="checkbox" />
+            <p><span>Include Uppercase Letters</span></p>
+          </div>
+          <div class="checkbox-container">
+            <input type="checkbox" />
+            <p><span>Include Lowercase Letters</span></p>
+          </div>
+          <div class="checkbox-container">
+            <input type="checkbox" />
+            <p><span>Include Numbers</span></p>
+          </div>
+          <div class="checkbox-container">
+            <input type="checkbox" />
+            <p><span>Include Symbols</span></p>
+          </div>
+        </div>
+        <div class="strength">
+          <p class="title">Title</p>
+          <p class="indicator-word">Medium</p>
+          <div class="strength-indicator">
+            <div class="strength-indicator-led"></div>
+            <div class="strength-indicator-led"></div>
+            <div class="strength-indicator-led"></div>
+            <div class="strength-indicator-led"></div>
+          </div>
+        </div>
+        <div class="generate">
+          <button>
+            <h2 class="title">generate</h2>
+            <img src="./public/images/icon-arrow-right.svg" alt="Go!" />
+          </button>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
