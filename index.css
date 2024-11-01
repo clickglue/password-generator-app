@@ -289,14 +289,44 @@ body {
 .input .selection .checkbox-container {
   display: flex;
   align-items: center;
+  cursor: pointer;
   gap: 1rem;
   margin-bottom: var(--sp-s);
+}
+
+.input .selection .checkbox-container input[type="checkbox"]{
+    display: none;
 }
 
 .input .selection .checkbox-container p span {
   font-size: var(--fs--1);
 }
 
+.input .selection .checkbox-container .custom-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--clr-almost-white);
+    display: inline-block;
+    position: relative;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+  /* Checked state with SVG checkmark */
+  .input .selection .checkbox-container input[type="checkbox"]:checked + .custom-checkbox {
+    background-color: var(--clr-bright-green);
+    border-color: var(--clr-bright-green);
+  }
+  /* Insert SVG checkmark on checked state */
+  .input .selection .checkbox-container input[type="checkbox"]:checked + .custom-checkbox::after {
+    content: url('./public/images/icon-check.svg'); /* Path to SVG file */
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px; /* Adjust size as needed */
+    height: 20px;
+  }
+
+/*
 .input .selection .checkbox-container input[type="checkbox" i] {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -316,6 +346,7 @@ body {
   position: relative;
   border: none;
 }
+*/
 
 .input .strength {
   height: 4.5rem;
@@ -329,11 +360,13 @@ body {
 }
 
 .input .strength .title {
+    text-transform: uppercase;
     color: var(--clr-grey);
     font-size: var(--fs--1);
 }
 
 .input .strength .indicator-word {
+    text-transform: uppercase;
     width: 40%;
     font-size: var(--fs-0);
     color: var(--clr-almost-white);
@@ -348,9 +381,17 @@ body {
 }
 
 .input .strength .strength-indicator .strength-indicator-led {
+    box-sizing: border-box;
     width: 10px;
     height: 28px;
     background-color: var(--clr-yellow);
+}
+
+.input .strength .strength-indicator .strength-indicator-led.off{
+    background-color: var(--clr-dark-grey);
+    border-style: solid;
+    border-color: var(--clr-almost-white);
+    border-width: 1px;
 }
 
 .input .generate {
@@ -363,12 +404,13 @@ body {
     background-color: var(--clr-bright-green);
     display: flex;
     flex-direction: row;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
     align-items: center;
     justify-content: space-around;
 }
 .input .generate button .title{
-font-size: var(--fs-1);
+    font-family: 'Jetbrains Mono';
+font-size: var(--fs-0);
 background-color: transparent;
 }
