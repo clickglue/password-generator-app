@@ -2,6 +2,7 @@ const slider = document.getElementById("slider");
 const lengthIndicator = document.getElementById("length");
 const passwordIndicator = document.getElementById("password");
 const strengthIndicator = document.getElementById("indicator-word");
+const copiedIndicator=document.getElementById('copied')
 const led1 = document.getElementById("led-one");
 const led2 = document.getElementById("led-two");
 const led3 = document.getElementById("led-three");
@@ -66,6 +67,8 @@ function updateLengthIndicator() {
 }
 
 function updatePassword() {
+  copiedIndicator.style.display='none'
+  passwordIndicator.classList.remove('start');
   passwordIndicator.innerHTML = password;
 }
 
@@ -77,7 +80,7 @@ function setOptions(data) {
 function copyToClipboard() {
   navigator.clipboard.writeText(password).then(() => {
     console.log('Password copied to clipboard:', password);
-    alert(`Password ${password} copied to clipboard!`);
+    copiedIndicator.style.display='block'
   }).catch((error) => {
     console.error('Failed to copy password:', error);
     alert('Failed to copy password.');

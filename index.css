@@ -205,6 +205,10 @@ html {
 body {
   width: 375px;
   padding: 4rem 1rem 0rem 1rem;
+
+  @media screen and (min-width:540px){
+    width: 540px;
+  }
 }
 
 .header {
@@ -228,18 +232,34 @@ body {
   font-size: var(--fs-2);
 }
 
+.result p .start {
+  color: var(--clr-grey);
+}
+
+body > main > section.result > h2 {
+    display: none;
+    transform: translateX(2rem);
+    color: var(--clr-bright-green);
+    @media screen and (min-width:540px){
+        transform: translateX(4rem);
+      }
+}
+
+body > main > section.result > img:hover {
+  filter: brightness(0) invert(1);
+}
+
 .input {
   background-color: var(--clr-dark-grey);
   padding: 1rem;
 }
+
 .input .length {
   box-sizing: border-box;
   height: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-.input .length h2 {
 }
 .input .length p {
   color: var(--clr-bright-green);
@@ -294,8 +314,8 @@ body {
   margin-bottom: var(--sp-s);
 }
 
-.input .selection .checkbox-container input[type="checkbox"]{
-    display: none;
+.input .selection .checkbox-container input[type="checkbox"] {
+  display: none;
 }
 
 .input .selection .checkbox-container p span {
@@ -303,50 +323,36 @@ body {
 }
 
 .input .selection .checkbox-container .custom-checkbox {
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--clr-almost-white);
-    display: inline-block;
-    position: relative;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-  /* Checked state with SVG checkmark */
-  .input .selection .checkbox-container input[type="checkbox"]:checked + .custom-checkbox {
-    background-color: var(--clr-bright-green);
-    border-color: var(--clr-bright-green);
-  }
-  /* Insert SVG checkmark on checked state */
-  .input .selection .checkbox-container input[type="checkbox"]:checked + .custom-checkbox::after {
-    content: url('./public/images/icon-check.svg'); /* Path to SVG file */
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 20px; /* Adjust size as needed */
-    height: 20px;
-  }
-
-/*
-.input .selection .checkbox-container input[type="checkbox" i] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  margin: 0px;
-  background-color: var(--clr-dark-grey);
-  border-color: var(--clr-almost-white);
-  border-width: 2px;
-  border-style: solid;
-  border-radius: 0px;
-  cursor: pointer;
-  width: 18px;
-  height: 18px;
-}
-.input .selection .checkbox-container input[type="checkbox" i]:checked {
-  background-color: var(--clr-bright-green);
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--clr-almost-white);
+  display: inline-block;
   position: relative;
-  border: none;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
-*/
+
+/* Checked state with SVG checkmark */
+.input
+  .selection
+  .checkbox-container
+  input[type="checkbox"]:checked
+  + .custom-checkbox {
+  background-color: var(--clr-bright-green);
+  border-color: var(--clr-bright-green);
+}
+/* Insert SVG checkmark on checked state */
+.input
+  .selection
+  .checkbox-container
+  input[type="checkbox"]:checked
+  + .custom-checkbox::after {
+  content: url("./public/images/icon-check.svg"); /* Path to SVG file */
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px; /* Adjust size as needed */
+  height: 20px;
+}
 
 .input .strength {
   height: 4.5rem;
@@ -360,81 +366,100 @@ body {
 }
 
 .input .strength .title {
-    text-transform: uppercase;
-    color: var(--clr-grey);
-    font-size: var(--fs--1);
+  text-transform: uppercase;
+  color: var(--clr-grey);
+  font-size: var(--fs--1);
 }
 
 .input .strength .indicator-word {
-    text-transform: uppercase;
-    width: 40%;
-    font-size: var(--fs-0);
-    color: var(--clr-almost-white);
-    text-align: right;
+  text-transform: uppercase;
+  width: 40%;
+  font-size: var(--fs-0);
+  color: var(--clr-almost-white);
+  text-align: right;
 }
 
-.input .strength .strength-indicator{
-    display: flex;
-    width: 60px;
-    align-items: center;
-    justify-content: space-between;
+.input .strength .strength-indicator {
+  display: flex;
+  width: 60px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .input .strength .strength-indicator .strength-indicator-led {
-    box-sizing: border-box;
-    width: 10px;
-    height: 28px;
-    background-color: var(--clr-yellow);
+  box-sizing: border-box;
+  width: 10px;
+  height: 28px;
+  background-color: var(--clr-yellow);
 }
 
-.input .strength .strength-indicator .strength-indicator-led.off{
-    background-color: var(--clr-dark-grey);
-    border-style: solid;
-    border-color: var(--clr-almost-white);
-    border-width: 1px;
+.input .strength .strength-indicator .strength-indicator-led.off {
+  background-color: var(--clr-dark-grey);
+  border-style: solid;
+  border-color: var(--clr-almost-white);
+  border-width: 1px;
 }
-.input .strength .strength-indicator .strength-indicator-led.red{
-    background-color: var(--clr-red);
-    border-style: solid;
-    border-color: var(--clr-red);
-    border-width: 1px;
+.input .strength .strength-indicator .strength-indicator-led.red {
+  background-color: var(--clr-red);
+  border-style: solid;
+  border-color: var(--clr-red);
+  border-width: 1px;
 }
-.input .strength .strength-indicator .strength-indicator-led.orange{
-    background-color: var(--clr-orange);
-    border-style: solid;
-    border-color: var(--clr-orange);
-    border-width: 1px;
+.input .strength .strength-indicator .strength-indicator-led.orange {
+  background-color: var(--clr-orange);
+  border-style: solid;
+  border-color: var(--clr-orange);
+  border-width: 1px;
 }
-.input .strength .strength-indicator .strength-indicator-led.yellow{
-    background-color: var(--clr-yellow);
-    border-style: solid;
-    border-color: var(--clr-yellow);
-    border-width: 1px;
+.input .strength .strength-indicator .strength-indicator-led.yellow {
+  background-color: var(--clr-yellow);
+  border-style: solid;
+  border-color: var(--clr-yellow);
+  border-width: 1px;
 }
-.input .strength .strength-indicator .strength-indicator-led.green{
-    background-color: var(--clr-bright-green);
-    border-style: solid;
-    border-color: var(--clr-bright-green);
-    border-width: 1px;
+.input .strength .strength-indicator .strength-indicator-led.green {
+  background-color: var(--clr-bright-green);
+  border-style: solid;
+  border-color: var(--clr-bright-green);
+  border-width: 1px;
 }
 
 .input .generate {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
-.input .generate button{
-    height: 4.5rem;
-    width: 100%;
-    background-color: var(--clr-bright-green);
-    display: flex;
-    flex-direction: row;
-    padding-left: 6rem;
-    padding-right: 6rem;
-    align-items: center;
-    justify-content: space-around;
+.input .generate button {
+  height: 4.5rem;
+  width: 100%;
+  background-color: var(--clr-bright-green);
+  display: flex;
+  flex-direction: row;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  align-items: center;
+  justify-content: space-around;
+
+  @media screen and (min-width:540px){
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
 }
-.input .generate button .title{
-    font-family: 'Jetbrains Mono';
-font-size: var(--fs-0);
-background-color: transparent;
+
+.input .generate button:hover {
+  background-color: var(--clr-dark-grey);
+  border: 1px, solid, var(--clr-almost-white);
+}
+
+.input .generate button .title {
+  font-family: "Jetbrains Mono";
+  font-size: var(--fs-0);
+  background-color: transparent;
+}
+
+.input .generate button:hover .title {
+  color: var(--clr-almost-white);
+}
+
+.input .generate button:hover img {
+  filter: brightness(0) invert(1); /* Turns image white */
 }

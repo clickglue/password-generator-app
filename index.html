@@ -12,7 +12,8 @@
     <header class="header">Password Generator</header>
     <main>
       <section class="result">
-        <p><span id="password">P4$5W0rD!</span></p>
+        <p><span id="password" class="start">P4$5W0rD!</span></p>
+        <h2 id="copied">copied</h2>
         <img onclick="copyToClipboard()" src="./public/images/icon-copy.svg" alt="Copy icon" />
       </section>
       <section class="input">
@@ -73,7 +74,7 @@
         <div class="generate">
           <button onclick="forceGenerate()">
             <h2 class="title">GENERATE</h2>
-            <img src="./public/images/icon-arrow-right.svg" alt="Go!" />
+            <img class="img" src="./public/images/icon-arrow-right.svg" alt="Go!" />
           </button>
         </div>
       </section>
